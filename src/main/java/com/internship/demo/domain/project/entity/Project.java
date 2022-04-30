@@ -7,9 +7,9 @@ import lombok.Data;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import java.util.List;
+import java.util.Set;
 
-@Data
+
 @Entity
 public class Project {
 
@@ -22,9 +22,32 @@ public class Project {
     private String projectName;
 
     @OneToMany(mappedBy = "project")
-    private List<Task> tasks;
+    private Set<Task> tasks;
 
+    public Project() {
+    }
 
+    public Long getProjectId() {
+        return projectId;
+    }
 
+    public void setProjectId(Long projectId) {
+        this.projectId = projectId;
+    }
 
+    public String getProjectName() {
+        return projectName;
+    }
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
+    public Set<Task> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(Set<Task> tasks) {
+        this.tasks = tasks;
+    }
 }

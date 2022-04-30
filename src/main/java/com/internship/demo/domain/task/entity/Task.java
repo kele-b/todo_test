@@ -14,7 +14,7 @@ public class Task {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @UniqueElements
+    //@UniqueElements
     private Long taskId;
 
     @NotBlank
@@ -24,6 +24,7 @@ public class Task {
     private String taskDescription;
 
     private Boolean taskDone;
+
 
     @ManyToOne
     @JoinColumn(name = "projectId")
