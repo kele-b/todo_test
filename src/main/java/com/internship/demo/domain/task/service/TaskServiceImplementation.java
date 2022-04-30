@@ -8,15 +8,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class TaskServiceImplementation implements TaskService{
 
-    @Autowired
+
     private TaskRepository taskRepository;
-    @Autowired
     private ProjectRepository projectRepository;
 
-    public void setRepositories(TaskRepository taskRepository, ProjectRepository projectRepository){
-        this.taskRepository=taskRepository;
-        this.projectRepository=projectRepository;
+    @Autowired
+    public TaskServiceImplementation(TaskRepository taskRepository, ProjectRepository projectRepository) {
+        this.taskRepository = taskRepository;
+        this.projectRepository = projectRepository;
     }
+
+}
 
     @Override
     public Task createTask(TaskDto taskDto) {

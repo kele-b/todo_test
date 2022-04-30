@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public class ProjectServiceImplementation implements ProjectService{
 
-    @Autowired
+
     private ProjectRepository projectRepository;
 
-    public void setProjectRepository(ProjectRepository projectRepository) {
+    @Autowired
+    public ProjectServiceImplementation(ProjectRepository projectRepository) {
         this.projectRepository = projectRepository;
     }
-
 
     @Override
     public Project createProject(ProjectDto projectDto) {
