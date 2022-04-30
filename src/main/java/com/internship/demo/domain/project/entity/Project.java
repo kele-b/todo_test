@@ -5,6 +5,7 @@ import lombok.Data;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.List;
 
@@ -16,6 +17,7 @@ public class Project {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long projectId;
 
+    @NotBlank
     @Size(min = 3)
     private String projectName;
 

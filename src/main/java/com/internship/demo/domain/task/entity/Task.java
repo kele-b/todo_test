@@ -5,6 +5,7 @@ import lombok.Data;
 import org.hibernate.validator.constraints.UniqueElements;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 @Data
@@ -16,6 +17,7 @@ public class Task {
     @UniqueElements
     private Long taskId;
 
+    @NotBlank
     @Size(min = 3)
     private String taskName;
 
