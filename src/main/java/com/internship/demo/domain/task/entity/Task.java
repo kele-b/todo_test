@@ -1,5 +1,6 @@
 package com.internship.demo.domain.task.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.internship.demo.domain.project.entity.Project;
 import lombok.Data;
 import org.hibernate.validator.constraints.UniqueElements;
@@ -14,7 +15,6 @@ public class Task {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    //@UniqueElements
     private Long taskId;
 
     @NotBlank
@@ -28,5 +28,6 @@ public class Task {
 
     @ManyToOne
     @JoinColumn(name = "projectId")
+    @JsonBackReference
     private Project project;
 }

@@ -1,5 +1,6 @@
 package com.internship.demo.domain.project.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.internship.demo.domain.task.entity.Task;
 import lombok.Data;
 
@@ -22,6 +23,7 @@ public class Project {
     private String projectName;
 
     @OneToMany(mappedBy = "project")
+    @JsonManagedReference
     private Set<Task> tasks;
 
     public Project() {
