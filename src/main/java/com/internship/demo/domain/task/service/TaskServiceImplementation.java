@@ -5,7 +5,9 @@ import com.internship.demo.domain.task.entity.Task;
 import com.internship.demo.domain.task.model.TaskDto;
 import com.internship.demo.domain.task.repository.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class TaskServiceImplementation implements TaskService{
 
 
@@ -17,8 +19,6 @@ public class TaskServiceImplementation implements TaskService{
         this.taskRepository = taskRepository;
         this.projectRepository = projectRepository;
     }
-
-}
 
     @Override
     public Task createTask(TaskDto taskDto) {

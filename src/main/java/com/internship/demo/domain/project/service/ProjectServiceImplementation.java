@@ -4,7 +4,9 @@ import com.internship.demo.domain.project.entity.Project;
 import com.internship.demo.domain.project.model.ProjectDto;
 import com.internship.demo.domain.project.repository.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ProjectServiceImplementation implements ProjectService{
 
 
@@ -25,7 +27,7 @@ public class ProjectServiceImplementation implements ProjectService{
     @Override
     public Project getProjectById(Long id) {
         return projectRepository.findById(id)
-                .orElse(new Project());
+                .orElseThrow(() -> new IllegalArgumentException("Project id does not exist"));
     }
 
     @Override
